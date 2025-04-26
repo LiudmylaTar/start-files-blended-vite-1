@@ -22,7 +22,7 @@ const Statistics = ({ title, stats }) => {
       {title && <h3 className={style.title}>Main Statistics</h3>}
       <ul className={style.list}>
         {stats.map(({ id, title, total }) => (
-          <li key={id}>
+          <li className={style.item} key={id}>
             <StatisticsItem
               title={title}
               total={total}

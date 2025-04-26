@@ -1,5 +1,5 @@
 import styles from './BlogCard.module.css';
-
+import { formatDistanceToNow } from 'date-fns';
 const BlogCard = ({
   poster,
   tag,
@@ -11,7 +11,6 @@ const BlogCard = ({
 }) => {
   return (
     <>
-      <h2>BlogCard</h2>;
       <div className={styles.card}>
         <div className={styles.cardHeader}>
           <img className={styles.cardPoster} src={poster} alt="card__image" />
@@ -26,7 +25,9 @@ const BlogCard = ({
             <img className={styles.avatar} src={avatar} alt={userName} />
             <div>
               <h3 className={styles.userName}>{userName}</h3>
-              <small className={styles.date}>{postedAt}</small>
+              <small className={styles.date}>
+                {formatDistanceToNow(postedAt)}
+              </small>
             </div>
           </div>
         </div>
